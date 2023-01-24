@@ -1,17 +1,10 @@
 package stepdefs;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+
+import io.cucumber.java.PendingException;
+import io.cucumber.java.en.*;
 
 public class BillerPayment {
-
-    @Given("^customer wishes to sign up for bill payment$")
-    public void customer_wishes_to_sign_up_for_bill_payment() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
 
     @When("^they want to transfer funds to their wallet$")
     public void they_want_to_transfer_funds_to_their_wallet() throws Throwable {
@@ -61,6 +54,11 @@ public class BillerPayment {
         throw new PendingException();
     }
 
+    @When("customer selects the {string} to pay against the {string} for a given {string}")
+    public void the_bill_should_be_paid_multiple() {
+        System.out.println("multiple bill payment step");
+    }
+
     @Then("^the amount deducted from the wallet and credited to the biller account$")
     public void the_amount_deducted_from_the_wallet_and_credited_to_the_biller_account() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
@@ -103,9 +101,4 @@ public class BillerPayment {
         throw new PendingException();
     }
 
-    @Then("^an appropriate error message is displayed$")
-    public void an_appropriate_error_message_is_displayed() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
 }

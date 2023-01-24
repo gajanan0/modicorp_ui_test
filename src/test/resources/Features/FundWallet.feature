@@ -10,7 +10,12 @@ Feature: Fund Wallet
     When they want to transfer funds to their wallet
     Then they are able to add funds to their wallet successfully
 
-  Scenario: Customer is unable to add funds to their wallet if the amount to be added is less (assume 50)
+  Scenario: Customer is unable to add funds to their wallet if the amount to be added is less (assume 100)
+    Given customer wishes to sign up for bill payment
+    When they want to transfer funds to their wallet
+    Then they are unable to add funds to their wallet successfully
+
+  Scenario: Customer is unable to add funds to their wallet if the amount to be added is greater (assume 9999999)
     Given customer wishes to sign up for bill payment
     When they want to transfer funds to their wallet
     Then they are unable to add funds to their wallet successfully
