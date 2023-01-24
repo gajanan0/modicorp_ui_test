@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="modicorp_ui_test" />
         <module name="ModiCorpUITestAuto" />
       </profile>
     </annotationProcessing>

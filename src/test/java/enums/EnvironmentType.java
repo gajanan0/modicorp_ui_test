@@ -1,6 +1,6 @@
 package enums;
 
-public class EnvironmentType {
+public enum EnvironmentType {
     UAT,
     PROD,
 }

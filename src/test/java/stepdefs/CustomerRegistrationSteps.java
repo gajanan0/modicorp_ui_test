@@ -1,27 +1,37 @@
 package stepdefs;
 
-import cucumber.api.PendingException;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import Context.TestContext;
+import io.cucumber.java.PendingException;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.junit.Assert;
+import pages.CustomerRegistrationPage;
 
 public class CustomerRegistrationSteps {
+
+    TestContext testContext;
+    CustomerRegistrationPage customerRegistrationPage;
+
+    public CustomerRegistrationSteps(TestContext context) {
+        testContext = context;
+        customerRegistrationPage = testContext.getPageObjectManager().getCustomerRegistrationPage();
+    }
+
     @Given("^customer wishes to sign up for bill payment$")
     public void customer_wishes_to_sign_up_for_bill_payment() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        Assert.assertTrue(customerRegistrationPage.displayLogo());
     }
 
     @When("^a valid email address is provided by the customer$")
     public void a_valid_email_address_is_provided_by_the_customer() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        customerRegistrationPage.enterEmailAddress();
+        customerRegistrationPage.clickContinueButton();
     }
 
     @Then("^a wallet is created and registered for the customer$")
     public void a_wallet_is_created_and_registered_for_the_customer() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        Assert.assertTrue(customerRegistrationPage.walletDisplay());
     }
 
     @When("^a customer provides an invalid email address$")
